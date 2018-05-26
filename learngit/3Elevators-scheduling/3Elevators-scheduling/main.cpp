@@ -5,10 +5,24 @@
 using namespace std;
 int main()
 {
-	ifstream infile("./input.txt");
+	if (argc == 2)
+	{
+		ifstream infile(argv[1]);
+		ofstream outfile1("./output1.txt");
+		ofstream outfile2("./output2.txt");
+		ofstream outfile3("./output3.txt");
+	}
+	else
+	{
+		ifstream infile(argv[1]);
+		ofstream outfile1(argv[2]);
+		ofstream outfile2(argv[3]);
+		ofstream outfile3(argv[4]);
+	}
+	/*ifstream infile("./input.txt");
 	ofstream outfile1("./output1.txt",ios::app);
 	ofstream outfile2("./output2.txt",ios::app);
-	ofstream outfile3("./output3.txt",ios::app);
+	ofstream outfile3("./output3.txt",ios::app);*/ 
 	passenger pas[502];//定义passenger类变量
 	int n, i;
 	infile >> n;//文件读入n
